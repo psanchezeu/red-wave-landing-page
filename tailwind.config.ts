@@ -55,7 +55,7 @@ export default {
         },
         black: '#000000',
         white: '#FFFFFF',
-        bloodRed: '#8A0303',
+        accentYellow: '#FEF7CD',
       },
       borderRadius: {
         lg: 'var(--radius)',

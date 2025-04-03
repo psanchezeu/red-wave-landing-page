@@ -5,10 +5,10 @@
 
 :root {
   --background: 0 0% 0%;
-  --foreground: 0 0% 100%;
-  --primary: 0 100% 27%;
-  --primary-foreground: 0 0% 100%;
-  --blood-red: 0 96% 27%;
+  --foreground: 60 100% 80%;
+  --primary: 0 0% 100%;
+  --primary-foreground: 0 0% 0%;
+  --accent-yellow: 60 100% 80%;
   
   --border-radius: 0.5rem;
 }
@@ -19,62 +19,50 @@
   }
 
   body {
-    @apply bg-black text-white m-0 p-0 overflow-x-hidden;
+    @apply bg-black text-[#FEF7CD] m-0 p-0 overflow-x-hidden;
     font-family: 'Montserrat', sans-serif;
   }
 }
 
 .vanta-container {
-  @apply absolute inset-0 z-0;
+  @apply fixed inset-0 z-0;
 }
 
 .content-container {
-  @apply relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 py-12;
+  @apply relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 py-16;
 }
 
 .logo-container {
-  @apply mb-12;
+  @apply mb-8 md:mb-12;
 }
 
 .typed-container {
-  @apply text-center mb-10;
+  @apply text-center mb-6 md:mb-10;
 }
 
 .typed-text {
-  @apply text-4xl sm:text-5xl md:text-6xl font-bold text-[#8A0303] text-shadow-sm;
+  @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white text-shadow-md;
 }
 
 .intro-text {
-  @apply text-lg sm:text-xl text-center max-w-3xl mb-10 text-white font-medium text-shadow-sm leading-relaxed;
+  @apply text-base sm:text-lg text-center max-w-3xl mx-auto mb-8 text-[#FEF7CD] font-medium text-shadow-sm leading-relaxed px-4;
 }
 
 .current-position {
-  @apply text-xl sm:text-2xl font-semibold mb-12 text-white text-shadow-sm;
+  @apply text-lg sm:text-xl md:text-2xl font-semibold mb-8 md:mb-12 text-[#FEF7CD] text-shadow-sm px-4 text-center;
 }
 
 .company-name {
   @apply relative px-2 py-1 inline-block;
-  text-shadow: 0 0 10px rgba(138, 3, 3, 0.5);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-.cta-container {
-  @apply mb-16;
-}
-
-.cta-button {
-  @apply px-8 py-4 bg-[#8A0303] text-white font-bold rounded-md text-xl transition-all shadow-lg;
-}
-
-.contact-info {
-  @apply fixed bottom-8 flex flex-col sm:flex-row items-center justify-center w-full gap-4 sm:gap-8 text-white text-shadow-sm;
-}
-
-.contact-item {
-  @apply flex items-center gap-2 hover:scale-105 transition-transform bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full;
+.features-container {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl mb-12 px-4;
 }
 
 .feature-box {
-  @apply bg-black/40 backdrop-blur-sm border border-[#8A0303]/30 rounded-lg p-6 w-full md:w-80 flex flex-col items-center text-center transition-all hover:border-[#8A0303] hover:shadow-lg hover:shadow-[#8A0303]/10;
+  @apply bg-black/40 backdrop-blur-sm border border-white/30 rounded-lg p-6 flex flex-col items-center text-center transition-all hover:border-white hover:shadow-lg hover:shadow-white/10;
 }
 
 .feature-icon {
@@ -82,16 +70,44 @@
 }
 
 .feature-title {
-  @apply text-xl font-bold mb-2 text-shadow-sm;
+  @apply text-xl font-bold mb-2 text-shadow-sm text-white;
 }
 
 .feature-desc {
-  @apply text-sm text-white/90 text-shadow-xs;
+  @apply text-sm text-[#FEF7CD]/90 text-shadow-xs;
+}
+
+.main-cta-section {
+  @apply flex flex-col md:flex-row items-center justify-center gap-8 mt-8 w-full max-w-5xl px-4 mb-16;
+}
+
+.cta-container {
+  @apply w-full md:w-auto;
+}
+
+.cta-button {
+  @apply px-6 py-4 md:px-8 md:py-4 bg-white text-black font-bold rounded-md text-lg md:text-xl transition-all shadow-lg w-full md:w-auto;
+}
+
+.contact-info {
+  @apply fixed bottom-8 flex flex-col sm:flex-row items-center justify-center w-full gap-4 sm:gap-8 text-[#FEF7CD] text-shadow-sm py-4;
+}
+
+.contact-item {
+  @apply flex items-center gap-2 hover:scale-105 transition-transform bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full;
 }
 
 /* Chat Contact Form */
 .chat-form-container {
-  @apply transition-all duration-300;
+  @apply bg-black/60 backdrop-blur-sm border border-white/40 rounded-lg p-4 w-full max-w-md transition-all duration-300;
+}
+
+.chat-title {
+  @apply font-bold text-xl mb-4 text-center text-white;
+}
+
+.chat-messages {
+  @apply h-60 overflow-y-auto mb-4 space-y-3 p-2 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent;
 }
 
 .message {
@@ -99,11 +115,11 @@
 }
 
 .user-message {
-  @apply text-right;
+  @apply text-right ml-auto bg-white/90 text-black;
 }
 
 .bot-message {
-  @apply text-left;
+  @apply text-left bg-black/80 border border-white/30 text-[#FEF7CD];
 }
 
 .animate-fade-in {
@@ -147,11 +163,11 @@
 .hvr-grow:hover,
 .hvr-grow:focus,
 .hvr-grow:active {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .typed-cursor {
-  color: #8A0303;
+  color: white;
   font-size: 2.5rem;
 }
 
@@ -174,28 +190,16 @@
   animation: pulse 2s infinite ease-in-out;
 }
 
-@media (max-height: 800px) {
-  .content-container {
-    @apply py-6;
-  }
-  
-  .logo-container {
-    @apply mb-6;
-  }
-  
-  .typed-container {
-    @apply mb-4;
-  }
-  
-  .intro-text {
-    @apply mb-4;
-  }
-  
-  .current-position {
-    @apply mb-6;
-  }
-  
-  .cta-container {
-    @apply mb-8;
-  }
+/* Custom scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
 }

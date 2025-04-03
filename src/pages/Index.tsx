@@ -37,14 +37,14 @@ const Index = () => {
           automatización avanzada e Inteligencia Artificial para transformar procesos empresariales.
         </div>
         
-        <div className="flex flex-col md:flex-row gap-8 mt-6 mb-12">
+        <div className="features-container">
           <div 
             className="feature-box" 
             data-aos="fade-right" 
             data-aos-duration="1000" 
             data-aos-delay="1000"
           >
-            <div className="feature-icon text-[#8A0303]">
+            <div className="feature-icon text-white">
               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 2v8"/>
                 <path d="m4.93 10.93 1.41 1.41"/>
@@ -66,7 +66,7 @@ const Index = () => {
             data-aos-duration="1000" 
             data-aos-delay="1200"
           >
-            <div className="feature-icon text-[#8A0303]">
+            <div className="feature-icon text-white">
               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 2a7 7 0 0 0-7 7"/>
                 <path d="M12 2v7l4.2 4.2"/>
@@ -87,7 +87,7 @@ const Index = () => {
             data-aos-duration="1000" 
             data-aos-delay="1400"
           >
-            <div className="feature-icon text-[#8A0303]">
+            <div className="feature-icon text-white">
               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 2a8 8 0 0 0-8 8c0 13 8 12 8 12s8 1 8-12a8 8 0 0 0-8-8Z"/>
                 <path d="M12 13V8"/>
@@ -106,10 +106,10 @@ const Index = () => {
           data-aos-delay="1000"
         >
           Actualmente lidero el departamento de desarrollo de AI en 
-          <span className="company-name text-[#8A0303] font-bold text-2xl ml-2">Aquí hay Marketing.</span>
+          <span className="company-name text-white font-bold text-2xl ml-2 pulse-animation">Aquí hay Marketing.</span>
         </div>
         
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8 w-full">
+        <div className="main-cta-section">
           <ChatContactForm />
           <CTAButton />
         </div>

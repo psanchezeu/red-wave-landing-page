@@ -65,19 +65,19 @@ const ChatContactForm = () => {
 
   return (
     <div 
-      className="chat-form-container bg-black/60 backdrop-blur-sm border border-[#8A0303]/40 rounded-lg p-4 w-full max-w-md" 
+      className="chat-form-container" 
       data-aos="fade-up" 
       data-aos-duration="1000" 
       data-aos-delay="1600"
     >
-      <div className="chat-title text-[#8A0303] font-bold text-xl mb-4 text-center">Cuéntame sobre tu proyecto</div>
+      <div className="chat-title">Cuéntame sobre tu proyecto</div>
       
-      <div className="chat-messages h-60 overflow-y-auto mb-4 space-y-3 p-2">
+      <div className="chat-messages">
         {messages.map(msg => (
           <div 
             key={msg.id} 
-            className={`message ${msg.sender === 'user' ? 'user-message ml-auto bg-[#8A0303]/90' : 'bot-message bg-black/80 border border-[#8A0303]/30'} 
-            rounded-lg p-3 max-w-[80%] text-white shadow-md`}
+            className={`message ${msg.sender === 'user' ? 'user-message' : 'bot-message'} 
+            rounded-lg p-3 max-w-[80%] shadow-md`}
           >
             {msg.text}
           </div>
@@ -91,18 +91,18 @@ const ChatContactForm = () => {
             placeholder="Tu nombre"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="bg-black/40 border-[#8A0303]/30 text-white"
+            className="bg-black/40 border-white/30 text-[#FEF7CD]"
           />
           <Input
             type="email"
             placeholder="Tu email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="bg-black/40 border-[#8A0303]/30 text-white"
+            className="bg-black/40 border-white/30 text-[#FEF7CD]"
           />
           <Button 
             onClick={handleSubmitContactInfo}
-            className="w-full bg-[#8A0303] hover:bg-[#6a0202] text-white"
+            className="w-full bg-white hover:bg-white/90 text-black font-semibold"
           >
             Enviar mis datos <Send className="ml-2 w-4 h-4" />
           </Button>
@@ -114,11 +114,11 @@ const ChatContactForm = () => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleSend()}
-            className="flex-grow bg-black/40 border-[#8A0303]/30 text-white mr-2 resize-none"
+            className="flex-grow bg-black/40 border-white/30 text-[#FEF7CD] mr-2 resize-none"
           />
           <Button 
             onClick={handleSend}
-            className="h-full aspect-square p-2 bg-[#8A0303] hover:bg-[#6a0202] text-white"
+            className="h-full aspect-square p-2 bg-white hover:bg-white/90 text-black"
           >
             <Send className="w-5 h-5" />
           </Button>
