@@ -20,7 +20,7 @@ const VantaBackground = () => {
           minWidth: 200.00,
           scale: 1.50,
           scaleMobile: 1.00,
-          color: 0x8A0303,
+          color: 0xFFFFFF,           // Changed from 0x8A0303 to white
           backgroundColor: 0x000000,
           points: 12.00,
           maxDistance: 25.00,

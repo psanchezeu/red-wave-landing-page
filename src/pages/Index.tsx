@@ -1,9 +1,7 @@
-
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import VantaBackground from '../components/VantaBackground';
-import Logo from '../components/Logo';
 import TypedHeading from '../components/TypedHeading';
 import CTAButton from '../components/CTAButton';
 import ContactInfo from '../components/ContactInfo';
@@ -23,7 +21,7 @@ const Index = () => {
       <VantaBackground />
       
       <div className="content-container">
-        <Logo />
+        {/* Logo component removed */}
         
         <TypedHeading />
         
@@ -59,6 +57,7 @@ const Index = () => {
             <h3 className="feature-title">Automatización</h3>
             <p className="feature-desc">Optimización de procesos mediante flujos automatizados que ahorran tiempo y reducen errores.</p>
           </div>
+          
           
           <div 
             className="feature-box" 
