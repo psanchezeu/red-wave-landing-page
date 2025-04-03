@@ -7,8 +7,8 @@ const ContactInfo = () => {
     <div className="contact-info" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1500">
       <div className="contact-item group">
         <Mail className="w-5 h-5 text-[#8A0303] group-hover:text-white transition-colors" />
-        <a href="mailto:pepe@aihumancopilot.com" className="hover:text-[#8A0303] transition-colors">
-          pepe@aihumancopilot.com
+        <a href="mailto:psanchez@aquihaymarketing.es" className="hover:text-[#8A0303] transition-colors">
+          psanchez@aquihaymarketing.es
         </a>
       </div>
       <div className="contact-item group">

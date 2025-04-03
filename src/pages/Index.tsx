@@ -7,6 +7,7 @@ import Logo from '../components/Logo';
 import TypedHeading from '../components/TypedHeading';
 import CTAButton from '../components/CTAButton';
 import ContactInfo from '../components/ContactInfo';
+import ChatContactForm from '../components/ChatContactForm';
 
 const Index = () => {
   useEffect(() => {
@@ -105,10 +106,13 @@ const Index = () => {
           data-aos-delay="1000"
         >
           Actualmente lidero el departamento de desarrollo de AI en 
-          <span className="text-[#8A0303] font-bold ml-2">AI Human Copilot.</span>
+          <span className="company-name text-[#8A0303] font-bold text-2xl ml-2">Aquí hay Marketing.</span>
         </div>
         
-        <CTAButton />
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8 w-full">
+          <ChatContactForm />
+          <CTAButton />
+        </div>
         
         <ContactInfo />
       </div>
