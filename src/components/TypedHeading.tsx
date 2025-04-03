@@ -9,13 +9,19 @@ const TypedHeading = () => {
   useEffect(() => {
     if (typedRef.current) {
       typed.current = new Typed(typedRef.current, {
-        strings: ["Soy Pepe Sánchez, Experto en Desarrollo No Code y Automatización con IA."],
-        typeSpeed: 50,
-        backSpeed: 0,
-        loop: false,
+        strings: [
+          "DESARROLLO NO CODE",
+          "AUTOMATIZACIÓN AVANZADA",
+          "INTELIGENCIA ARTIFICIAL",
+          "TRANSFORMACIÓN DIGITAL"
+        ],
+        typeSpeed: 80,
+        backSpeed: 50,
+        loop: true,
         showCursor: true,
         cursorChar: '|',
         startDelay: 500,
+        backDelay: 2000,
       });
     }
 
@@ -28,6 +34,7 @@ const TypedHeading = () => {
 
   return (
     <div className="typed-container" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+      <h2 className="text-2xl md:text-3xl text-white mb-2 font-light">SOY PEPE SÁNCHEZ, EXPERTO EN</h2>
       <h1 className="typed-text">
         <span ref={typedRef}></span>
       </h1>

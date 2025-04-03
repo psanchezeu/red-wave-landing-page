@@ -19,7 +19,7 @@
   }
 
   body {
-    @apply bg-black text-white m-0 p-0 overflow-hidden;
+    @apply bg-black text-white m-0 p-0 overflow-x-hidden;
     font-family: 'Montserrat', sans-serif;
   }
 }
@@ -29,15 +29,11 @@
 }
 
 .content-container {
-  @apply relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6;
+  @apply relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 py-12;
 }
 
 .logo-container {
   @apply mb-12;
-}
-
-.logo {
-  @apply w-24 sm:w-32 h-auto;
 }
 
 .typed-container {
@@ -45,15 +41,19 @@
 }
 
 .typed-text {
-  @apply text-3xl sm:text-4xl md:text-5xl font-bold text-white;
+  @apply text-4xl sm:text-5xl md:text-6xl font-bold text-[#8A0303];
 }
 
 .intro-text {
-  @apply text-lg sm:text-xl text-center max-w-3xl mb-10 text-white;
+  @apply text-lg sm:text-xl text-center max-w-3xl mb-10 text-white opacity-90 leading-relaxed;
 }
 
 .current-position {
   @apply text-xl sm:text-2xl font-semibold mb-12 text-white;
+}
+
+.cta-container {
+  @apply mb-16;
 }
 
 .cta-button {
@@ -61,11 +61,27 @@
 }
 
 .contact-info {
-  @apply absolute bottom-8 flex flex-col sm:flex-row items-center justify-center w-full gap-4 sm:gap-8 text-white;
+  @apply fixed bottom-8 flex flex-col sm:flex-row items-center justify-center w-full gap-4 sm:gap-8 text-white;
 }
 
 .contact-item {
-  @apply flex items-center gap-2;
+  @apply flex items-center gap-2 hover:scale-105 transition-transform;
+}
+
+.feature-box {
+  @apply bg-black/40 backdrop-blur-sm border border-[#8A0303]/30 rounded-lg p-6 w-full md:w-80 flex flex-col items-center text-center transition-all hover:border-[#8A0303] hover:shadow-lg hover:shadow-[#8A0303]/10;
+}
+
+.feature-icon {
+  @apply mb-4;
+}
+
+.feature-title {
+  @apply text-xl font-bold mb-2;
+}
+
+.feature-desc {
+  @apply text-sm text-white/80;
 }
 
 /* Hover.css custom styles */
@@ -86,4 +102,50 @@
 
 .typed-cursor {
   color: #8A0303;
+  font-size: 2.5rem;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@media (max-height: 800px) {
+  .content-container {
+    @apply py-6;
+  }
+  
+  .logo-container {
+    @apply mb-6;
+  }
+  
+  .typed-container {
+    @apply mb-4;
+  }
+  
+  .intro-text {
+    @apply mb-4;
+  }
+  
+  .current-position {
+    @apply mb-6;
+  }
+  
+  .cta-container {
+    @apply mb-8;
+  }
 }

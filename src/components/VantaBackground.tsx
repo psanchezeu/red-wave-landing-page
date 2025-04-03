@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import WAVES from 'vanta/dist/vanta.waves.min';
+import NET from 'vanta/dist/vanta.net.min';
 import * as THREE from 'three';
 
 const VantaBackground = () => {
@@ -10,7 +10,7 @@ const VantaBackground = () => {
   useEffect(() => {
     if (!vantaEffect && vantaRef.current) {
       setVantaEffect(
-        WAVES({
+        NET({
           el: vantaRef.current,
           THREE: THREE,
           mouseControls: true,
@@ -18,14 +18,14 @@ const VantaBackground = () => {
           gyroControls: false,
           minHeight: 200.00,
           minWidth: 200.00,
-          scale: 1.00,
+          scale: 1.50,
           scaleMobile: 1.00,
-          color: 0x000000,
-          shininess: 24.00,
-          waveHeight: 20.00,
-          waveSpeed: 0.50,
-          zoom: 0.65,
-          highlightColor: 0x8A0303,
+          color: 0x8A0303,
+          backgroundColor: 0x000000,
+          points: 12.00,
+          maxDistance: 25.00,
+          spacing: 18.00,
+          showDots: false
         })
       );
     }
