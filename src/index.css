@@ -24,106 +24,150 @@
   }
 }
 
-.vanta-container {
-  @apply fixed inset-0 z-0;
+@layer components {
+  .vanta-container {
+    @apply fixed inset-0 z-0;
+  }
+
+  .content-container {
+    @apply relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 py-16;
+  }
+
+  .logo-container {
+    @apply mb-8 md:mb-12;
+  }
+
+  .typed-container {
+    @apply text-center mb-6 md:mb-10;
+  }
+
+  .typed-text {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white text-shadow-md;
+  }
+
+  .intro-text {
+    @apply text-base sm:text-lg text-center max-w-3xl mx-auto mb-8 text-[#FEF7CD] font-medium text-shadow-sm leading-relaxed px-4;
+  }
+
+  .current-position {
+    @apply text-lg sm:text-xl md:text-2xl font-semibold mb-8 md:mb-12 text-[#FEF7CD] text-shadow-sm px-4 text-center;
+  }
+
+  .company-name {
+    @apply relative px-2 py-1 inline-block;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
+  .features-container {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl mb-12 px-4;
+  }
+
+  .feature-box {
+    @apply bg-black/40 backdrop-blur-sm border border-white/30 rounded-lg p-6 flex flex-col items-center text-center transition-all hover:border-white hover:shadow-lg hover:shadow-white/10;
+  }
+
+  .feature-icon {
+    @apply mb-4;
+  }
+
+  .feature-title {
+    @apply text-xl font-bold mb-2 text-shadow-sm text-white;
+  }
+
+  .feature-desc {
+    @apply text-sm text-[#FEF7CD]/90 text-shadow-xs;
+  }
+
+  .main-cta-section {
+    @apply flex flex-col md:flex-row items-center justify-center gap-8 mt-8 w-full max-w-5xl px-4 mb-16;
+  }
+
+  .cta-container {
+    @apply w-full md:w-auto;
+  }
+
+  .cta-button {
+    @apply px-6 py-4 md:px-8 md:py-4 bg-white text-black font-bold rounded-md text-lg md:text-xl transition-all shadow-lg w-full md:w-auto;
+  }
+
+  .contact-info {
+    @apply fixed bottom-8 flex flex-col sm:flex-row items-center justify-center w-full gap-4 sm:gap-8 text-[#FEF7CD] text-shadow-sm py-4;
+  }
+
+  .contact-item {
+    @apply flex items-center gap-2 hover:scale-105 transition-transform bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full;
+  }
 }
 
-.content-container {
-  @apply relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 py-16;
+@layer components {
+  /* Chat Contact Form */
+  .chat-form-container {
+    @apply bg-black/60 backdrop-blur-sm border border-white/40 rounded-lg p-4 w-full max-w-md transition-all duration-300;
+  }
+
+  .chat-title {
+    @apply font-bold text-xl mb-4 text-center text-white;
+  }
+
+  .chat-messages {
+    @apply h-60 overflow-y-auto mb-4 space-y-3 p-2;
+  }
+
+  .message {
+    @apply transition-all duration-300 transform;
+  }
+
+  .user-message {
+    @apply text-right ml-auto bg-white/90 text-black;
+  }
+
+  .bot-message {
+    @apply text-left bg-black/80 border border-white/30 text-[#FEF7CD];
+  }
 }
 
-.logo-container {
-  @apply mb-8 md:mb-12;
-}
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
 
-.typed-container {
-  @apply text-center mb-6 md:mb-10;
-}
+  /* Text Shadow Utilities */
+  .text-shadow-xs {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
 
-.typed-text {
-  @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white text-shadow-md;
-}
+  .text-shadow-sm {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  }
 
-.intro-text {
-  @apply text-base sm:text-lg text-center max-w-3xl mx-auto mb-8 text-[#FEF7CD] font-medium text-shadow-sm leading-relaxed px-4;
-}
+  .text-shadow-md {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  }
 
-.current-position {
-  @apply text-lg sm:text-xl md:text-2xl font-semibold mb-8 md:mb-12 text-[#FEF7CD] text-shadow-sm px-4 text-center;
-}
+  /* Hover.css custom styles */
+  .hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+  }
 
-.company-name {
-  @apply relative px-2 py-1 inline-block;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
+  .hvr-grow:hover,
+  .hvr-grow:focus,
+  .hvr-grow:active {
+    transform: scale(1.05);
+  }
 
-.features-container {
-  @apply grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl mb-12 px-4;
-}
+  .typed-cursor {
+    color: white;
+    font-size: 2.5rem;
+  }
 
-.feature-box {
-  @apply bg-black/40 backdrop-blur-sm border border-white/30 rounded-lg p-6 flex flex-col items-center text-center transition-all hover:border-white hover:shadow-lg hover:shadow-white/10;
-}
-
-.feature-icon {
-  @apply mb-4;
-}
-
-.feature-title {
-  @apply text-xl font-bold mb-2 text-shadow-sm text-white;
-}
-
-.feature-desc {
-  @apply text-sm text-[#FEF7CD]/90 text-shadow-xs;
-}
-
-.main-cta-section {
-  @apply flex flex-col md:flex-row items-center justify-center gap-8 mt-8 w-full max-w-5xl px-4 mb-16;
-}
-
-.cta-container {
-  @apply w-full md:w-auto;
-}
-
-.cta-button {
-  @apply px-6 py-4 md:px-8 md:py-4 bg-white text-black font-bold rounded-md text-lg md:text-xl transition-all shadow-lg w-full md:w-auto;
-}
-
-.contact-info {
-  @apply fixed bottom-8 flex flex-col sm:flex-row items-center justify-center w-full gap-4 sm:gap-8 text-[#FEF7CD] text-shadow-sm py-4;
-}
-
-.contact-item {
-  @apply flex items-center gap-2 hover:scale-105 transition-transform bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full;
-}
-
-/* Chat Contact Form */
-.chat-form-container {
-  @apply bg-black/60 backdrop-blur-sm border border-white/40 rounded-lg p-4 w-full max-w-md transition-all duration-300;
-}
-
-.chat-title {
-  @apply font-bold text-xl mb-4 text-center text-white;
-}
-
-.chat-messages {
-  @apply h-60 overflow-y-auto mb-4 space-y-3 p-2 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent;
-}
-
-.message {
-  @apply transition-all duration-300 transform;
-}
-
-.user-message {
-  @apply text-right ml-auto bg-white/90 text-black;
-}
-
-.bot-message {
-  @apply text-left bg-black/80 border border-white/30 text-[#FEF7CD];
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
+  .pulse-animation {
+    animation: pulse 2s infinite ease-in-out;
+  }
 }
 
 @keyframes fadeIn {
@@ -135,40 +179,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* Text Shadow Utilities */
-.text-shadow-xs {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.text-shadow-sm {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.text-shadow-md {
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-}
-
-/* Hover.css custom styles */
-.hvr-grow {
-  display: inline-block;
-  vertical-align: middle;
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  transition-duration: 0.3s;
-  transition-property: transform;
-}
-
-.hvr-grow:hover,
-.hvr-grow:focus,
-.hvr-grow:active {
-  transform: scale(1.05);
-}
-
-.typed-cursor {
-  color: white;
-  font-size: 2.5rem;
 }
 
 @keyframes pulse {
@@ -184,22 +194,4 @@
     opacity: 1;
     transform: scale(1);
   }
-}
-
-.pulse-animation {
-  animation: pulse 2s infinite ease-in-out;
-}
-
-/* Custom scrollbar */
-.scrollbar-thin::-webkit-scrollbar {
-  width: 6px;
-}
-
-.scrollbar-thin::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
 }

@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { Send } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -64,15 +64,10 @@ const ChatContactForm = () => {
   };
 
   return (
-    <div 
-      className="chat-form-container" 
-      data-aos="fade-up" 
-      data-aos-duration="1000" 
-      data-aos-delay="1600"
-    >
-      <div className="chat-title">Cuéntame sobre tu proyecto</div>
+    <div className="chat-form-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
+      <h3 className="chat-title">Envíame un mensaje</h3>
       
-      <div className="chat-messages">
+      <ScrollArea className="chat-messages scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
         {messages.map(msg => (
           <div 
             key={msg.id} 
@@ -82,7 +77,7 @@ const ChatContactForm = () => {
             {msg.text}
           </div>
         ))}
-      </div>
+      </ScrollArea>
       
       {showContactFields ? (
         <div className="contact-fields space-y-3 mb-3 animate-fade-in">
